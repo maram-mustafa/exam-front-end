@@ -33,7 +33,7 @@ export class Favorite extends Component {
     axios
       .delete(url)
       .then((response) => {
-        this.setState({ favData: response.data });
+        this.setState({ favData: response.data.drinks });
       })
       .catch((err) => {
         this.setState({ err: err.message });
@@ -61,7 +61,7 @@ export class Favorite extends Component {
     axios
       .put(url, dataBody)
       .then((response) => {
-        this.setState({ favData: response.data.drinks });
+        this.setState({ favData: response.data });
       })
       .catch((err) => {
         this.setState({ err: err.message });
